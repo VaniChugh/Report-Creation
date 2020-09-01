@@ -3,8 +3,9 @@ from flask import Flask,render_template
 from jinja2 import Environment
 test_case_result = {'123': "Pass",
                     '234': "Fail",
-                    '345': "Skip",
+                    '345': "Pass",
                     '456': "Pass"}
+testsuitename = "FIX Test Suite"
 app = Flask(__name__)
 
 @app.template_filter()
@@ -24,20 +25,22 @@ def template_test():
         if "Pass" in dv:
             count = count + 1
     total = len(testcasedetails)
-    algebrastatus = ["Algebra", total, count, total - count, str(round((count / total) * 100, 1))]
+    algebrastatus = [testsuitename , total, count, total - count, str(round((count / total) * 100, 1))]
     print(algebrastatus)
     try:
         with open("./templates/template.html", 'r') as temp1:
             htmlval = temp1.read()
-            jinja_env = Environment().from_string(htmlval).render(title = "Test Case Summary",
-                                                                  testsuite="FIX test Suite",
+            jinja_env = Environment().from_string(htmlval).render(title= "Test Case Summary",
+                                                                  testsuite= testsuitename,
                                                                   statusdet= algebrastatus,
-                                                                  td=test_case_result,)
+                                                                  td=test_case_result)
             print(jinja_env)
             with open("./reports/report.html", 'w') as report:
                 report.write(jinja_env)
+        return "Success"
     except FileNotFoundError:
         print("File not found")
+        return "Failed"
     # return render_template('template.html',
     #                        my_string="Wheeeee!",
     #                        test_case_result=test_case_result,

@@ -16,11 +16,9 @@
         <th class="text-primary testresultsummary">Failed</th>
         <th class="text-primary testresultsummary">Pass(%)</th>
         <tr class="info alert-info">
-        <td>New</td>
-        <td>5</td>
-        <td>2</td>
-        <td>3</td>
-          <td>0.4</td>
+        {%for n in statusdet%}
+        <td>{{n}}</td>
+        {%endfor%}
         </tr>
       </table>
     </div>

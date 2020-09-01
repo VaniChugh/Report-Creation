@@ -1,10 +1,11 @@
 from __future__ import division
 from flask import Flask,render_template
 from jinja2 import Environment
-test_case_result = {'123': "Pass",
-                    '234': "Fail",
-                    '345': "Pass",
-                    '456': "Pass"}
+test_case_result = {'123': ["Pass", "Expected 1 ", "Actual 1"],
+                    '234': ["Fail", "Expected 13 ", "Actual 1"],
+                    '345': ["Pass", "Expected 2 ", "Actual 2"],
+                    '456': ["Pass", "Expected 12 ", "Actual 12"]}
+
 testsuitename = "FIX Test Suite"
 app = Flask(__name__)
 
@@ -22,20 +23,19 @@ def template_test():
     testcasedetails = test_case_result
     count = 0
     for dv in testcasedetails.values():
-        if "Pass" in dv:
+        if "Pass" in dv[0]:
             count = count + 1
     total = len(testcasedetails)
-    algebrastatus = [testsuitename , total, count, total - count, str(round((count / total) * 100, 1))]
-    print(algebrastatus)
+    algebrastatus = [testsuitename, total, count, total - count, str(round((count / total) * 100, 1))]
     try:
         with open("./templates/template.html", 'r') as temp1:
             htmlval = temp1.read()
-            jinja_env = Environment().from_string(htmlval).render(title= "Test Case Summary",
-                                                                  testsuite= testsuitename,
-                                                                  statusdet= algebrastatus,
+            jinja_env = Environment().from_string(htmlval).render(title="Test Case Summary",
+                                                                  testsuite=testsuitename,
+                                                                  statusdet=algebrastatus,
                                                                   td=test_case_result)
-            print(jinja_env)
-            with open("./reports/report.html", 'w') as report:
+            report_filename = "./reports/report.html"
+            with open(report_filename, 'w') as report:
                 report.write(jinja_env)
         return "Success"
     except FileNotFoundError:

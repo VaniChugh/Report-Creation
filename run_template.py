@@ -8,18 +8,7 @@ test_case_result = {'123': ["Pass", "Expected 1 ", "Actual 1"],
                     '456': ["Pass", "Expected 12 ", "Actual 12"]}
 
 testsuitename = "FIX_Test_Suite"
-app = Flask(__name__)
-
-@app.template_filter()
-def datetimefilter(value, format='%Y/%m/%d %H:%M'):
-    """convert a datetime to a different format."""
-    return value.strftime(format)
-
-app.jinja_env.filters['datetimefilter'] = datetimefilter
-
-
 # using the route decorator to tell the Flask what URL should trigger our function
-@app.route("/")
 def template_test():
     testcasedetails = test_case_result
     count = 0
@@ -46,4 +35,4 @@ def template_test():
         return "Failed"
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    template_test()

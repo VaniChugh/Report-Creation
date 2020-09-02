@@ -4,6 +4,22 @@
       <title>{{title}}</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <style>
+     table {
+        border-style: solid;
+        border-color: #095484;
+        text-align: center
+      }
+      th {
+        border: solid #095484;
+        background-color: #d9d9d9;
+        text-align: center
+      }
+      td {
+        border: groove #1c87c9;
+        text-align: center
+      }
+   </style>
   </head>
   <body>
 
@@ -24,10 +40,39 @@
     <br>
     <h1 style="text-align:left;">Complete Test Info</h1>
     <table class="table table=hover testresultsummary">
+        <tr>
+        <th class="text-primary testresultsummary">Test Info</th>
+        <th colspan="5" class="text-primary testresultsummary">Test Inputs</th>
+        <th class="text-primary testresultsummary">Expected Outputs</th>
+        <th colspan="5" class="text-primary testresultsummary">Actual CAMM response</th>
+        <th colspan="2" class="text-primary testresultsummary">Actual FIX response</th>
+        <th colspan="3" class="text-primary testresultsummary">Results</th>
+        </tr>
+        <tr>
         <th class="text-primary testresultsummary">Test Case ID</th>
-        <th class="text-primary testresultsummary">Result</th>
-        <th class="text-primary testresultsummary">Expected</th>
-        <th class="text-primary testresultsummary">Actual</th>
+
+        <!-- Columns for the Test inputs -->
+        <th class="text-primary testresultsummary">Description</th>
+        <th class="text-primary testresultsummary">Security ID</th>
+        <th class="text-primary testresultsummary">Symbol</th>
+        <th class="text-primary testresultsummary">Security type</th>
+        <th class="text-primary testresultsummary">SecuritySub type</th>
+        <!-- Columns for the Expected Outputs -->
+        <th class="text-primary testresultsummary">Product type</th>
+        <!-- Columns for the Actual CAMM Response -->
+        <th class="text-primary testresultsummary">PriceRequest/EcnReqID</th>
+        <th class="text-primary testresultsummary">PriceRequestDirection</th>
+        <th class="text-primary testresultsummary">PriceRequestQuantity</th>
+        <th class="text-primary testresultsummary">PriceRequestReqPriceValue</th>
+        <th class="text-primary testresultsummary">PriceRequestSecurityID</th>
+        <!-- Columns for the FIX Message Response -->
+        <th class="text-primary testresultsummary">PriceRequestSettleDate</th>
+        <th class="text-primary testresultsummary">PriceRequestCAMMValidationResult</th>
+        <!-- Columns for the Results -->
+        <th class="text-primary testresultsummary">Pass/Fail</th>
+        <th class="text-primary testresultsummary">Actual CAMM Message Received</th>
+        <th class="text-primary testresultsummary">Actual FIX Message Received</th>
+        </tr>
         {%for n in td%}
         <tr>
         <td>{{n}}</td>

@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+      <title>Test Execution Report: FIX_Test_Suite</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <style>
+     table {
+        border-style: solid;
+        border-color: #095484;
+        text-align: center
+        border-collapse: collapse;
+      }
+
+      table > caption {
+            font-weight: bold;
+        }
+      th {
+        border: solid #095484;
+        background-color: #d9d9d9;
+        text-align: center
+      }
+      td {
+        border: groove #1c87c9;
+        text-align: center
+      }
+   </style>
+  </head>
+  <body>
+
+ <div class="container">
+      <h1 style="text-align:left;"> Test Execution Report: FIX_Test_Suite </h1>
+      <table class="table table=hover testresultsummary">
+        <caption>Test Summary</caption>
+        <th class="text-primary testresultsummary">Test Suite Name</th>
+        <th class="text-primary testresultsummary">Total Test Cases Count</th>
+        <th style="color:green;" class="text-primary testresultsummary">Passed</th>
+        <th style="color:red;" class="text-primary testresultsummary">Failed</th>
+        <th class="text-primary testresultsummary">Pass(%)</th>
+        <tr class="info alert-info">
+        
+        
+            <td>FIX_Test_Suite</td>
+        
+        
+        
+            <td>4</td>
+        
+        
+        
+        <td style="color:green;font-weight: bold">3</td>
+        
+        
+        
+        <td style="color:red;font-weight: bold">1</td>
+        
+        
+        
+            <td>75.0</td>
+        
+        
+        </tr>
+      </table>
+    <hr>
+    <h1 style="text-align:left;"></h1>
+    <table class="table table=hover testresultsummary">
+        <caption>Test Case Details</caption>
+        <tr>
+        <th class="text-primary testresultsummary">Test Info</th>
+        <th colspan=2 class="text-primary testresultsummary">Test Inputs</th>
+        <th class="text-primary testresultsummary">Expected Outputs</th>
+        <th colspan=2 class="text-primary testresultsummary">Actual CAMM response</th>
+        <th colspan=2 class="text-primary testsummary">Actual FIX response</th>
+        <th colspan="3" class="text-primary testresultsummary">Results</th>
+        </tr>
+        <tr>
+        <th class="text-primary testresultsummary">Test Case ID</th>
+
+        <!-- Columns for the Test inputs -->
+        
+        <th class="text-primary testresultsummary">Description</th>
+        
+        <th class="text-primary testresultsummary">SecurityID</th>
+        
+        <!-- Columns for the Expected Outputs -->
+        <th class="text-primary testresultsummary">CAMM Message</th>
+        <!-- Columns for the Actual CAMM Response -->
+        
+        <th class="text-primary testresultsummary">EcnReqID</th>
+        
+        <th class="text-primary testresultsummary">Quantity</th>
+        
+        <!-- Columns for the FIX Message Response -->
+        
+        <th class="text-primary testresultsummary">ReqID</th>
+        
+        <th class="text-primary testresultsummary">orderID</th>
+        
+        <!-- Columns for the Results -->
+        <th class="text-primary testresultsummary">Pass/Fail</th>
+        <th class="text-primary testresultsummary">Actual CAMM Message Received</th>
+        <th class="text-primary testresultsummary">Actual FIX Message Received</th>
+        </tr>
+        
+        <tr>
+        <td>123</td>
+        <!-- Filling the Test inputs -->
+        
+        <td>Description1</td>
+        
+        <td>TestCase 123</td>
+        
+
+        <!-- Filling the Expected Output -->
+        <td>Message Output1</td>
+
+        <!-- Filling the values for the Actual CAMM Message Recieved -->
+        
+        <td>123</td>
+        
+        <td>2</td>
+        
+
+        <!-- Filling the values for the Actual FIX Message Recieved -->
+        
+        <td>123123</td>
+        
+        <td>2</td>
+        
+
+        <!-- Filling the values for the Result -->
+        <td>PASS</td>
+        <td>Hello this the CAMM Message</td>
+        <td>Hello this is the FIX Message.</td>
+
+        </tr>
+        
+        <tr>
+        <td>234</td>
+        <!-- Filling the Test inputs -->
+        
+        <td>Description1</td>
+        
+        <td>TestCase 234</td>
+        
+
+        <!-- Filling the Expected Output -->
+        <td>Message Output1</td>
+
+        <!-- Filling the values for the Actual CAMM Message Recieved -->
+        
+        <td>234</td>
+        
+        <td>2</td>
+        
+
+        <!-- Filling the values for the Actual FIX Message Recieved -->
+        
+        <td>234234</td>
+        
+        <td>2</td>
+        
+
+        <!-- Filling the values for the Result -->
+        <td>FAIL</td>
+        <td>Hello this the CAMM Message</td>
+        <td>Hello this is the FIX Message.</td>
+
+        </tr>
+        
+        <tr>
+        <td>345</td>
+        <!-- Filling the Test inputs -->
+        
+        <td>Description1</td>
+        
+        <td>TestCase 345</td>
+        
+
+        <!-- Filling the Expected Output -->
+        <td>Message Output1</td>
+
+        <!-- Filling the values for the Actual CAMM Message Recieved -->
+        
+        <td>345</td>
+        
+        <td>2</td>
+        
+
+        <!-- Filling the values for the Actual FIX Message Recieved -->
+        
+        <td>345345</td>
+        
+        <td>2</td>
+        
+
+        <!-- Filling the values for the Result -->
+        <td>PASS</td>
+        <td>Hello this the CAMM Message</td>
+        <td>Hello this is the FIX Message.</td>
+
+        </tr>
+        
+        <tr>
+        <td>456</td>
+        <!-- Filling the Test inputs -->
+        
+        <td>Description1</td>
+        
+        <td>TestCase 456</td>
+        
+
+        <!-- Filling the Expected Output -->
+        <td>Message Output1</td>
+
+        <!-- Filling the values for the Actual CAMM Message Recieved -->
+        
+        <td>456</td>
+        
+        <td>2</td>
+        
+
+        <!-- Filling the values for the Actual FIX Message Recieved -->
+        
+        <td>456456</td>
+        
+        <td>2</td>
+        
+
+        <!-- Filling the values for the Result -->
+        <td>PASS</td>
+        <td>Hello this the CAMM Message</td>
+        <td>Hello this is the FIX Message.</td>
+
+        </tr>
+        
+</tr>
+</table>
+
+    </div>
+    <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+  </body>
+</html>
